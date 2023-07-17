@@ -1,23 +1,14 @@
 # your code goes here!
 class Anagram:
-  def __init__(self, word):
-    self.word = word
+    def __init__(self, word):
+        self.word = word
 
-  def match(self, list):
-    wordlist = []
+    def is_anagram(self, word):
+        return sorted(self.word.lower()) == sorted(word.lower())
 
-    first_word = [letter for letter in self.word]
-    first_word.sort()
+    def match(self, word_list):
+        return [word for word in word_list if self.is_anagram(word)]
 
-    for word in list:
-      second_word = [letter for letter in word]
-      second_word.sort()
-
-      if first_word == second_word:
-        wordlist.append(word)
-
-    self.list = wordlist
-    return wordlist
 
 
 
